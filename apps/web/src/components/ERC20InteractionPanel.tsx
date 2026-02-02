@@ -18,44 +18,13 @@ import {
     ChevronDown,
     ChevronUp
 } from 'lucide-react';
-import { cn } from './cn';
+import { cn } from '@/lib/utils';
 import { useAccount, useWalletClient, usePublicClient, useSwitchChain } from 'wagmi';
 import { arbitrum, arbitrumSepolia } from 'viem/chains';
+import { superposition, superpositionTestnet } from '@/lib/chains';
 import type { Chain } from 'viem';
 
-// Define custom Superposition chains
-const superposition: Chain = {
-    id: 55244,
-    name: 'Superposition',
-    nativeCurrency: {
-        decimals: 18,
-        name: 'Ether',
-        symbol: 'ETH',
-    },
-    rpcUrls: {
-        default: { http: ['https://rpc.superposition.so'] },
-    },
-    blockExplorers: {
-        default: { name: 'Explorer', url: 'https://explorer.superposition.so' },
-    },
-};
 
-const superpositionTestnet: Chain = {
-    id: 98985,
-    name: 'Superposition Testnet',
-    nativeCurrency: {
-        decimals: 18,
-        name: 'SPN',
-        symbol: 'SPN',
-    },
-    rpcUrls: {
-        default: { http: ['https://testnet-rpc.superposition.so'] },
-    },
-    blockExplorers: {
-        default: { name: 'Explorer', url: 'https://testnet-explorer.superposition.so' },
-    },
-    testnet: true,
-};
 
 // ERC20 ABI for the deployed Stylus contract (IStylusToken)
 const ERC20_ABI = [

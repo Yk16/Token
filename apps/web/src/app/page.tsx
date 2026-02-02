@@ -1,4 +1,5 @@
 import { WalletButton } from '@/components/wallet-button';
+import { ERC20InteractionPanel } from '@/components/ERC20InteractionPanel';
 
 export default function Home() {
   return (
@@ -10,9 +11,13 @@ export default function Home() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-12">
           A Web3 application built with Cradle
         </p>
-        
-        <div className="flex justify-center">
+
+        <div className="flex justify-center mb-12">
           <WalletButton />
+        </div>
+
+        <div className="w-full max-w-md mx-auto text-left">
+          <ERC20InteractionPanel />
         </div>
       </div>
     </main>
